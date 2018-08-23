@@ -1,6 +1,6 @@
 CREATE DATABASE goGetIt_db;
 
-USE goGitIt_db;
+USE goGetIt_db;
 
 CREATE TABLE products(
     ID INT NOT NULL AUTO_INCREMENT,
