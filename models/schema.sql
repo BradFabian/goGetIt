@@ -16,4 +16,4 @@ INSERT INTO products (product_name, product_quantity, quantity_required)
 VALUES 
     ("Onions", 5, 3),
     ("Peppers", 3, 5),
-    ("Water(16oz bottles)", 10, 10);
+    ("Water (16oz bottles)", 10, 10);
