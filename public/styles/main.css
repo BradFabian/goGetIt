@@ -1,0 +1,28 @@
+.bg {
+    background-image:  url("../styles/img/BB-ROC-2.jpg"); 
+    z-index: -1;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    
+  }
+  
+  #tablescreen{
+      
+      
+      
+      
+      
+    margin: 0 auto;
+   
+    
+  }
+  #tableBox {
+    margin: 0 auto;
+    
+    padding: 4%;
+    margin-top: 5%;
+  }
+  
+  
