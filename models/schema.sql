@@ -3,4 +3,7 @@ CREATE DATABASE goGetIt_db;
 
 USE goGetIt_db;
 
-
+CREATE TABLE products(
+    ID INT AUTO_INCREMENT NOT NULL,
+    
+    )
