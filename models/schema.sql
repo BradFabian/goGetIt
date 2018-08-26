@@ -15,7 +15,7 @@ CREATE TABLE products(
 
     SELECT * FROM products;
 
-    INSERT INTO (product_name, product_quantity, quantity_needed, quantity_ordered)
+    INSERT INTO products (product_name, product_quantity, quantity_needed, quantity_ordered)
     VALUES ("Oinions", 4, 20, 16),
     ("Skirt Steak", 5, 10, 5),
     ("Tomatoes", 17, 20, 0),
