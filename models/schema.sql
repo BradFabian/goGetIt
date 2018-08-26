@@ -25,4 +25,16 @@ CREATE TABLE products(
     ("Blueberries", 30, 45, 15),
     ("Cajun Seasoning (26oz)", 10, 20, 0),
     ("Salt (26oz)", 15, 20, 0),
-    ("Water (16oz bottles)", 75, 100, 0)
+    ("Water (16oz bottles)", 75, 100, 0);
+
+    CREATE TABLE category(
+        category_ID INT AUTO_INCREMENT NOT NULL,
+        category_name VARCHAR(25) NOT NULL,
+        primary key(category_ID)
+    );
+
+    SELECT * FROM category;
+    INSERT INTO category (category_name)
+    VALUES ("Foods"),
+    ("Office Supplies"),
+    ("All");
