@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 DROP DATABASE IF EXISTS goGetIt_db;
+=======
+>>>>>>> c7ba2d3d9af41371349231ceae713d1b8112c4d9
 CREATE DATABASE goGetIt_db;
 
 USE goGetIt_db;
 
 CREATE TABLE products(
+<<<<<<< HEAD
     ID INT AUTO_INCREMENT NOT NULL,
     product_name VARCHAR(25) NOT NULL,
     product_quantity INT(45) NOT NULL,
@@ -38,3 +42,19 @@ CREATE TABLE products(
     VALUES ("Foods"),
     ("Office Supplies"),
     ("All");
+=======
+    ID INT NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(45) NOT NULL,
+    product_quantity INT(20) NOT NULL,
+    quantity_required INT(20) NOT NULL,
+    PRIMARY KEY(ID)
+);
+
+SELECT * FROM products;
+
+INSERT INTO products (product_name, product_quantity, quantity_required)
+VALUES 
+    ("Onions", 5, 3),
+    ("Peppers", 3, 5),
+    ("Water (16oz bottles)", 10, 10);
+>>>>>>> c7ba2d3d9af41371349231ceae713d1b8112c4d9
