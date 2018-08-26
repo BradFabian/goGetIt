@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS inventorydb;
+CREATE DATABASE inventorydb;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+INSERT INTO inventorydb (Product, Quantity)
+VALUES ("Onion", 20);

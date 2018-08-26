@@ -14,6 +14,12 @@
   <!--Regular CSS-->
   
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
   <title>Go Get It!</title>
 </head>
@@ -47,8 +53,14 @@
             <tbody id="grocerydb">
              
             </tbody>
+            
           </table>
-          
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Add Item" aria-label="Add Item" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="button-submit">Add</button>
+            </div>
+          </div>
            
 
       </div>
@@ -84,49 +96,14 @@
 
 
   </nav>
-  <script>
-
-       $.get("/api/all", function(data) {
-
-if (data.length !== 0) {
-
-  for (var i = 0; i < data.length; i++) {
-                 
-                      var tbody = $("#grocerydb");
-                        // Create and save a reference to new empty table row
-                        var tr = $("<tr>");
-                        // Create and save references to 3 td elements 
-                        var idRow = '<td>' + data[i].id + '</td>';
-                        var productRow = '<td>' + data[i].product + '</td>';
-                        var stockRow = '<td>' + data[i].stock + '</td>';
-                        
-                       
-                        
-
-                        // Append the td elements to the new table row
-                        tr.append(idRow);
-                        tr.append(productRow);
-                        tr.append(stockRow);
-                       
-                       
-
-                        // Append the table row to the tbody element
-                        tbody.append(tr)
-  }
-  }
-});
+  <!--Link to jquery-->
+  <script type="text/javascript" src="js/index.js"></script>
   
-  
-  </script>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  
 </body>
 
 </html>
