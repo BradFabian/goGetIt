@@ -9,14 +9,14 @@ CREATE TABLE products(
     product_quantity INT(45) NOT NULL,
     quantity_needed INT(45) NOT NULL,
     quantity_ordered INT(45) NOT NULL,
-    category VARCHAR NOT NULL,
+    category VARCHAR(25) NOT NULL,
     primary key(ID)
     
     );
 
     SELECT * FROM products;
 
-    INSERT INTO (product_name, product_quantity, quantity_needed, quantity_ordered, category)
+    INSERT INTO products (product_name, product_quantity, quantity_needed, quantity_ordered, category)
     VALUES ("Oinions", 4, 20, 16, "food"),
     ("Skirt Steak", 5, 10, 5, "food"),
     ("Tomatoes", 17, 20, 0, "food"),
