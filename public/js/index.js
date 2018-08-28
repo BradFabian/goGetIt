@@ -1,17 +1,17 @@
 $(document).ready(function() {
   
-  //call function whne page loads//
+  //call function when page loads//
 getInventory();
 
 function getInventory() {
 
-$.get("/api/all", function(data) {
+$.get("/api/inventory", function(data) {
 
   if (data.length !== 0) {
-  
+   console.log(data.length);
     for (var i = 0; i < data.length; i++) {
                    
-                        var tbody = $("#grocerydb");
+                        var tbody = $("#gogetit_db");
                           // Create and save a reference to new empty table row
                           var tr = $("<tr>");
                           // Create and save references to 3 td elements 
