@@ -8,8 +8,14 @@ module.exports = function(app) {
         
       });
     });
-  });
+  }); 
 
+  app.get("/member", function(req, res) {
+    db.products.findAll({}).then(function(dbgoGetIt) {
+      res.render("member", {dbgoGetIt});
+      
+    });
+  }); 
  /* // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
@@ -23,4 +29,5 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });*/
-};
+  };
+

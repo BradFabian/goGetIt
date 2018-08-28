@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Flyingslow88!",
-    "database": "exampledb",
+    "database": "goGetIt_db",
     "host": "localhost",
     "dialect": "mysql"
   },
