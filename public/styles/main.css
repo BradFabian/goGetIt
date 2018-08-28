@@ -1,3 +1,8 @@
+body, html {
+  height: 100%;
+}
+
+
 .bg {
     background-image:  url("../styles/img/BB-ROC-2.jpg"); 
     z-index: -1;
@@ -7,7 +12,16 @@
     background-size: cover;  
     
   }
-  
+  .member_bg {
+    background-image:  url("../styles/img/BB-ROC-2.jpg"); 
+    z-index: -1;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+   
+    margin: auto;
+  }
   #tablescreen{
       
       
@@ -25,4 +39,19 @@
     margin-top: 5%;
   }
   
-  
+  #splashscreen{
+      
+      
+      
+      
+      
+    margin: 0 auto;
+   
+    
+  }
+  #splashBox {
+    margin: 0 auto;
+    
+    padding: 4%;
+    margin-top: 5%;
+  }
