@@ -16,9 +16,12 @@ $.get("/api/inventory", function(data) {
                           var tr = $("<tr>");
                           // Create and save references to 3 td elements 
                           var idRow = '<td>' + data[i].id + '</td>';
-                          var productRow = '<td>' + data[i].product + '</td>';
-                          var stockRow = '<td>' + data[i].stock + '</td>';
-                          
+                          var productRow = '<td>' + data[i].product_name + '</td>';
+                          var stockRow = '<td>' + data[i].product_quantity + '</td>';
+                          var neededRow = '<td>' + data[i].product_needed + '</td>';
+                          var quantityRow = '<td>' + data[i].quantity_ordered + '</td>';
+  
+  
                          
                           
   
@@ -26,8 +29,8 @@ $.get("/api/inventory", function(data) {
                           tr.append(idRow);
                           tr.append(productRow);
                           tr.append(stockRow);
-                         
-                         
+                          tr.append(neededRow);
+                          tr.append(quantityRow);
   
                           // Append the table row to the tbody element
                           tbody.append(tr)
