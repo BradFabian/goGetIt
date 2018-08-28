@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     product_name: DataTypes.STRING,
     product_quantity: DataTypes.INTEGER,
     quantity_needed: DataTypes.INTEGER,
-    quantity_ordered: DataTypes.INTEGERL,
+    quantity_ordered: DataTypes.INTEGER,
    });
   return goGetIt_db;
   

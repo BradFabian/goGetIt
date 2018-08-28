@@ -5,7 +5,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.goGetIt_db.findAll({}).then(function(dbgoGetIt) {
       res.render("index", {
-        Product: dbgoGetIt
+        
       });
     });
   });
