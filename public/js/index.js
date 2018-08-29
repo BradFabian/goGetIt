@@ -20,7 +20,7 @@ $.get("/api/inventory", function(data) {
                           var stockRow = '<td>' + data[i].product_quantity + '</td>';
                           var neededRow = '<td>' + data[i].product_needed + '</td>';
                           var quantityRow = '<td>' + data[i].quantity_ordered + '</td>';
-  
+                          var deleteBut =   '<button type="button" class="btn btn-danger id="delete">'+ Delete + '</button>'  
   
                          
                           
@@ -31,7 +31,7 @@ $.get("/api/inventory", function(data) {
                           tr.append(stockRow);
                           tr.append(neededRow);
                           tr.append(quantityRow);
-  
+                          tr.append(deleteBut);
                           // Append the table row to the tbody element
                           tbody.append(tr)
     }
