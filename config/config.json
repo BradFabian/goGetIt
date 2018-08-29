@@ -1,19 +1,14 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password",
-    "database": "exampledb",
-=======
-    "password": "Flyingslow88!",
     "database": "goGetIt_db",
->>>>>>> 68b9fd1ae51a9af9fb8aecd1dff8f99b95fdd8cd
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Flyingslow88!",
+    "password": "password",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

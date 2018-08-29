@@ -8,8 +8,10 @@ module.exports = function(sequelize, DataTypes) {
     quantity_ordered: DataTypes.INTEGER,
    });
   return Products;
-sequelize.sync().then(function (){
-Products.bulkCreate({
+
+Products.sync().then(function (){
+Products.bulkCreate([
+  {
   product_name: "Onion",
   product_quantity: 4,
   quantity_needed: 20,
@@ -20,7 +22,7 @@ Products.bulkCreate({
   product_quantity: 5,
   quantity_needed: 10,
   quantity_ordered: 5
-},
-);
+}
+]);
 });
 };
