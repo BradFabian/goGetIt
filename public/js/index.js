@@ -1,5 +1,14 @@
 $(document).ready(function() {
   
+
+  $('#member_bg').scroll(function() {
+    var scrollPos = $(this).scrollTop();
+    var pageHeight = $(document).height() - $(this).height();
+    var progress = scrollPos / pageHeight;
+    var backgroundOffset = (progress*100) + '%';
+    $("html").css("background-position", "0% " + backgroundOffset);
+  });
+
   //call function when page loads//
 getInventory();
 
@@ -20,7 +29,7 @@ $.get("/api/inventory", function(data) {
                           var stockRow = '<td>' + data[i].product_quantity + '</td>';
                           var neededRow = '<td>' + data[i].product_needed + '</td>';
                           var quantityRow = '<td>' + data[i].quantity_ordered + '</td>';
-                          var deleteBut =   '<button type="button" class="btn btn-danger id="delete">'+ Delete + '</button>'  
+                          var deleteBut =   '<button type="button" class="btn btn-danger id="delete">'+ "Delete" + '</button>'  
   
                          
                           

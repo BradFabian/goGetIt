@@ -10,11 +10,6 @@ module.exports = function(app) {
      
     });
   });
-  app.get("/member", function(req, res) {
-    db.products.findAll().then(function(dbgoGetIt) {
-      res.render("member", {dbgoGetIt});
-      
-    });
-  }); 
+ 
  
 };

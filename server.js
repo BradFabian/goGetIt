@@ -18,9 +18,9 @@ app.use(express.static("public"));
 app.use(session({ secret: "Gardens", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-var ejs  = require('ejs')
-app.engine('html', ejs.renderFile);
-app.set('view engine', 'html');
+//var ejs  = require('ejs')
+/*app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');*/
 
 
 // Routes

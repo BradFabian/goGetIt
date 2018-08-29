@@ -25,6 +25,54 @@ module.exports = function(sequelize, DataTypes) {
       quantity_needed: 10,
       quantity_ordered: 5
     },
+    {
+      product_name: "Almonds",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Tomatoes",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Potatoes",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Apples",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Blue Berries",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Canjun Seasoning (26 oz)",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Salt (26 oz)",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
+    {
+      product_name: "Water (16 oz)",
+      product_quantity: 5,
+      quantity_needed: 10,
+      quantity_ordered: 5
+    },
   ]);
     });
     return Products;

@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var path = require('path');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -9,7 +9,9 @@ module.exports = function(app) {
       });
     });
   }); 
-
+ app.get("/member", (req, res)=>{
+   res.sendFile(path.join(__dirname, "../public/member.html"));
+ })
   
  /* // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {

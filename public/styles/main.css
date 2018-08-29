@@ -4,6 +4,7 @@ body, html {
 
 
 .bg {
+
     background-image:  url("../styles/img/BB-ROC-2.jpg"); 
     z-index: -1;
     height: 100%; 
@@ -13,6 +14,7 @@ body, html {
     
   }
   .member_bg {
+    
     background-image:  url("../styles/img/BB-ROC-2.jpg"); 
     z-index: -1;
     height: 100%;
