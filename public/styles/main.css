@@ -15,8 +15,8 @@ body, html {
   }
   .member_bg {
     
-    background-image:  url("../styles/img/BB-ROC-2.jpg"); 
-    z-index: -1;
+    background-image:  url("../styles/img/main_grocery-store-min-compressor.jpg"); 
+    background-attachment: fixed;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,4 +56,9 @@ body, html {
     
     padding: 4%;
     margin-top: 5%;
+  }
+
+  #footer{
+    margin-bottom: 0px;
+    margin-top: 0px;
   }

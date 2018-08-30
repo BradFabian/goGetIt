@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-
+ //background css//
   $('#member_bg').scroll(function() {
     var scrollPos = $(this).scrollTop();
     var pageHeight = $(document).height() - $(this).height();
@@ -9,10 +9,47 @@ $(document).ready(function() {
     $("html").css("background-position", "0% " + backgroundOffset);
   });
 
+  
+  // Delete button Button//
+  var itemSelect = $("#gogetit_db");
+  $(document).on("click", "button.delete", handleDelete);
+  // Delete Button Function//
+  function deleteItem(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/inventory/" + id
+    })
+      .then(function() {
+        getInventory(itemSelect.val());
+      });
+  }
+
+  //Which item too delete//
+  function handleDelete() {
+    var currentItem = $(this)
+      .parent()
+      .parent()
+      .data("inventory");
+    deleteItem(currentItem.id);
+  }
+  
   //call function when page loads//
-getInventory();
+
+
+
+  getInventory();
+
+
+
+
+
 
 function getInventory() {
+
+
+
+
+
 
 $.get("/api/inventory", function(data) {
 
@@ -29,7 +66,7 @@ $.get("/api/inventory", function(data) {
                           var stockRow = '<td>' + data[i].product_quantity + '</td>';
                           var neededRow = '<td>' + data[i].product_needed + '</td>';
                           var quantityRow = '<td>' + data[i].quantity_ordered + '</td>';
-                          var deleteBut =   '<button type="button" class="btn btn-danger id="delete">'+ "Delete" + '</button>'  
+                          var deleteBut =   '<button type="button" class="delete btn btn-danger>'+ "Delete" + '</button>'  
   
                          
                           
@@ -47,4 +84,6 @@ $.get("/api/inventory", function(data) {
     }
   });
 }
+
+
 });  

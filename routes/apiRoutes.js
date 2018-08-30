@@ -10,6 +10,18 @@ module.exports = function(app) {
      
     });
   });
- 
+  //Delete Button API//
+
+  app.delete("/api/inventory/:id", function(req, res) {
+    
+    db.products.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbgoGetIt) {
+      res.json(dbgoGetIt);
+    });
+
+  });
  
 };
