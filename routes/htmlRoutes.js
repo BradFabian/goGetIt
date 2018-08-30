@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var path = require('path');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -9,13 +9,10 @@ module.exports = function(app) {
       });
     });
   }); 
-
-  app.get("/member", function(req, res) {
-    db.products.findAll({}).then(function(dbgoGetIt) {
-      res.render("member", {dbgoGetIt});
-      
-    });
-  }); 
+ app.get("/member", (req, res)=>{
+   res.sendFile(path.join(__dirname, "../public/member.html"));
+ })
+  
  /* // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
