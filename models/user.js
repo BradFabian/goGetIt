@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING, //DataTypes.STRING//"tomatogardens@gmail.com"
       allowNull: false,
       unique: true,
       validate: {
@@ -15,10 +15,20 @@ module.exports = function(sequelize, DataTypes) {
     },
     // The password cannot be null
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING, //DataTypes.STRING//"admin"
       allowNull: false
     }
   });
+       //Creating user in table//
+       User.sync().then(function (){
+        console.log("User Created:")
+      User.create({
+         email: "tomatogardens@gmail.com",
+         password: "admin" ,
+          
+        });
+      });
+
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
