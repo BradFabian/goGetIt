@@ -52,12 +52,9 @@ $.get("/api/inventory", function(data) {
 getInventory();
 // Delete button Button//
 var itemSelect = $("#gogetit_db");
-
 $(document).on("click", "button.delete", handleDelete);
 // Delete Button Function//
-function deleteItem(event) {
-  event.stopPropagation();
-  var id = $(this).data("id");
+function deleteItem(id) {
   $.ajax({
     method: "DELETE",
     url: "/api/inventory/" + id
@@ -65,8 +62,6 @@ function deleteItem(event) {
     .then(function() {
       getInventory(itemSelect.val());
     });
-
-    console.log(data);
 }
 
 //Which item too delete//
