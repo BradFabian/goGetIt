@@ -1,7 +1,14 @@
-body, html {
+body  {
   height: 100%;
 }
 
+#cardsize {
+  width: 40rem;
+  margin: auto;
+}
+.card-body {
+  margin: 0 auto;
+}
 .container-fluid {
   width: 100%;
   padding-right: 0px;
@@ -15,10 +22,16 @@ body, html {
     background-image:  url("../styles/img/BB-ROC-2.jpg"); 
     z-index: -1;
     height: 100%; 
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;  
     
+  }
+
+  .d-inline-block{
+    width: 30px;
+     height: 30px;
   }
   .member_bg  {
     
@@ -48,6 +61,8 @@ body, html {
     margin-top: 5%;
   }
   
+
+
   #splashscreen{
       
       
@@ -68,4 +83,39 @@ body, html {
   #footer{
     margin-bottom: 0px;
     margin-top: 0px;
+  }
+
+
+  @media screen and (max-width: 980px){
+
+    #cardsize{
+      width: 30rem;
+    }
+
+
+
+
+  }
+
+  @media screen and (max-width: 768px){
+    #cardsize{
+      width: auto;
+    }
+  }
+  @media screen and (max-width: 640px){
+     .navbar-brand {
+      color: #fff;
+      font-size: 40px;
+       margin: auto;
+    
+  }
+
+    #cardsize{
+      width: auto;
+    }
+    .d-inline-block{
+      width: 60px;
+       height: 60px;
+    }
+
   }
