@@ -55,16 +55,7 @@ html{
     margin: auto; 
     width: 60rem;
   }
-  #tablescreen{
-      
-      
-      
-      
-      
-    margin: 0 auto;
-   
-    
-  }
+ 
   #tableBox {
     margin: 0 auto;
     
@@ -143,10 +134,13 @@ html{
     }
     #tableId{
       margin: auto; 
-      width: fit-content;
+      width: 40rem;
     }
     html{
       width: auto;
       margin: auto;
+    }
+    #memberBar{
+      width: fit-content;
     }
   }
