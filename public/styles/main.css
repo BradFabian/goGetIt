@@ -1,7 +1,9 @@
 body  {
   height: 100%;
 }
-
+html{
+  width: 100%;
+}
 #cardsize {
   width: 40rem;
   margin: auto;
@@ -43,6 +45,15 @@ body  {
     background-size: cover;  
    
     margin: auto;
+  }
+  #table{
+    margin: auto;
+    width: 60rem;
+  }
+
+  #tableId{
+    margin: auto; 
+    width: 60rem;
   }
   #tablescreen{
       
@@ -89,7 +100,7 @@ body  {
   @media screen and (max-width: 980px){
 
     #cardsize{
-      width: 30rem;
+      width: auto;
     }
 
 
@@ -101,6 +112,15 @@ body  {
     #cardsize{
       width: auto;
     }
+    
+    #table{
+      margin: auto;
+      width: auto;
+    }
+    #tableId {
+      margin: auto;
+      width: auto;
+  }
   }
   @media screen and (max-width: 640px){
      .navbar-brand {
@@ -117,5 +137,16 @@ body  {
       width: 60px;
        height: 60px;
     }
-
+    #table{
+      margin: auto;
+      width: auto;
+    }
+    #tableId{
+      margin: auto; 
+      width: fit-content;
+    }
+    html{
+      width: auto;
+      margin: auto;
+    }
   }
