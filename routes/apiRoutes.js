@@ -34,5 +34,10 @@ module.exports = function(app) {
     });
 
   });
- 
+
+  app.post("/api/inventory", function(req, res) {
+    var userData = req.body;
+    
+  })
 };
+ 
