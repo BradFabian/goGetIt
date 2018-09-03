@@ -23,7 +23,7 @@ module.exports = function(app) {
   });
   //Delete Button API//
 
-  app.delete("/api/inventory/:id", function(req, res) {
+  app.delete("/api/Products/:id", function(req, res) {
     
     db.products.destroy({
       where: {
@@ -35,9 +35,11 @@ module.exports = function(app) {
 
   });
 
-  app.post("/api/inventory", function(req, res) {
-    var userData = req.body;
-    
-  })
+  app.post("/api/Products", function(req, res) {
+    db.post.create(req.body).then(function(dbgoGetIt) {
+      res.json(dbgoGetIt);
+    })
+
+  });
 };
  
