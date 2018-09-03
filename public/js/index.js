@@ -88,6 +88,8 @@ function deleteItem(id) {
 
 //Which item too delete//
 function handleDelete() {
+  console.log("deleted");
+
   var currentItem = $(this)
     .parent()
     .parent()
@@ -99,13 +101,6 @@ function handleDelete() {
 
 handleDelete();
 
-
-var adding = prompt("Enter Item's name: ");
-
-if (adding != null) {
-  document.getElementById("button-submit").innerHTML =
-  "added"
-};
-
+//add button
 
 });  
