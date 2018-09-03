@@ -78,8 +78,7 @@ var itemSelect = $("#Id");
 $(document).on("click", "button.delete", handleDelete);
 // Delete Button Function//
 function deleteItem(event) {
-  event.stopPropagation();
-  var id = $(this).data("id");
+  
   $.ajax({
     method: "DELETE",
     url: "/api/inventory/" + id
