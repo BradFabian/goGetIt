@@ -100,7 +100,12 @@ function handleDelete() {
 handleDelete();
 
 
+var adding = prompt("Enter Item's name: ");
 
+if (adding != null) {
+  document.getElementById("button-submit").innerHTML =
+  "added"
+};
 
 
 });  
