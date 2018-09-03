@@ -13,7 +13,7 @@ module.exports = function(app) {
 
 
   // Get all examples
-  app.get("/api/inventory", function(req, res) {
+  app.get("/api/Products", function(req, res) {
     
     db.products.findAll().then(function(dbgoGetIt) {
       console.log(dbgoGetIt);
@@ -25,7 +25,7 @@ module.exports = function(app) {
 
   app.delete("/api/Products/:id", function(req, res) {
     
-    db.products.destroy({
+    db.Products.destroy({
       where: {
         id: req.params.id
       }
@@ -40,6 +40,22 @@ module.exports = function(app) {
       res.json(dbgoGetIt);
     })
 
+  });
+
+  app.put("/api/Products", function(req, res) {
+    db.dbgoGetIt.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbgoGetIt) {
+        res.json(dbgoGetIt);
+      });
+  });
+
+  app.post("/api/member", passport.authenticate("local"), function(req, res) {
+    res.json("/add");
   });
 };
  
