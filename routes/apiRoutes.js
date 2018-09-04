@@ -13,36 +13,34 @@ module.exports = function(app) {
 
 
   // Get all examples
-  app.get("/api/Products", function(req, res) {
-    
-    db.products.findAll().then(function(dbgoGetIt) {
-      console.log(dbgoGetIt);
+  app.get("/api/inventory", function(req, res) {
+    db.Products.findAll({}).then(function(dbgoGetIt) {
       res.json(dbgoGetIt);
-     
     });
   });
   //Delete Button API//
 
-  app.delete("/api/Products/:id", function(req, res) {
-    
+
+  app.delete("/api/inventory/:id", passport.authenticate("local"), function(req, res) {
     db.Products.destroy({
       where: {
         id: req.params.id
       }
     }).then(function(dbgoGetIt) {
       res.json(dbgoGetIt);
-    });
-
+    })
   });
 
-  app.post("/api/Products", function(req, res) {
+
+
+  app.post("/api/inventory", passport.authenticate("local"), function(req, res) {
     db.post.create(req.body).then(function(dbgoGetIt) {
       res.json(dbgoGetIt);
     })
 
   });
 
-  app.put("/api/Products", function(req, res) {
+  app.put("/api/inventory", function(req, res) {
     db.dbgoGetIt.update(
       req.body,
       {
