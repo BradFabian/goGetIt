@@ -3,7 +3,13 @@ var express = require('express');
 var db = require('../models');
 
 
-var categories = require('../config/categories');
+// Require the list of departments from departments.js
+// This list will fill the select element in the view
+var departments = require('../config/departments');
+
+
+var passport = require('../config/passport');
+var middleware = require('../config/middleware')
 
 // Find all products and render list view
 exports.list = function (req, res){
