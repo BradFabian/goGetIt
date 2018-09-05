@@ -12,15 +12,20 @@ var passport = require('../config/passport');
 var middleware = require('../config/middleware')
 
 // Find all products and render list view
-exports.list = function (req, res){
-    db.products.findAll().then(function(data){
-        res.render("list", {products: data});
-    });
+exports.list = function(req, res){
+	db.product.findAll().then(function(data){
+		res.render("list", { products: data });
+	});
 }
 
-// Render view to create a new item
+// Render View to Login
+exports.login = function(req, res){
+    res.render("login", { user: passport});
+};
+
+// Render view to create a new product
 exports.create = function(req, res){
-    res.render("create", {category: categories});
+	res.render("create", { department: departments});
 }
 // New product is created in database, and moves to add items page
 exports.store = function(req,res){
