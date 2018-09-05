@@ -86,3 +86,10 @@ exports.update = function(req, res){
 	});
 	
 }
+
+exports.api = function(req, res){
+	db.product.findAll().then(function(data){
+		console.log(data);
+		res.json({ products: data });
+	});
+}
