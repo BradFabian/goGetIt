@@ -27,20 +27,18 @@ exports.login = function(req, res){
 exports.create = function(req, res){
 	res.render("create", { department: departments});
 }
-// New product is created in database, and moves to add items page
-exports.store = function(req,res){
-    db.products.create({
-        name: req.body.name,
-        category: req.body.category,
-        stock: req.body.stock ? parseInt(req.body.stock): 0,
-        unit: req.body.unit,
-        required: req.body.stock ? parseInt(req.body.stock): 0,
-        unit2: req.body.unit2,
-        gogetit: (req.body.gogetit == 'on') ? true: false
-    })
-    .then(function(){
-        res.redirect('/'); // User stays in same add items page to enter multiple items
-    });
+// Save the new product in database and redirect to create
+exports.store = function(req, res){
+	db.product.create({
+		name: req.body.name,
+		department: req.body.department,
+		price: req.body.stock ?parseInt(req.body.stock) : 0,
+		stock: req.body.required ? parseInt(req.body.required) : 0,
+		gogetit: (req.body.gogetit == 'on') ? true : false
+	})	
+	.then(function(){
+		res.redirect('/list');  // option is to redirect to 'create' so user could enter several products
+	});
 }
 
 // Destroy an Item from the database and return an OK
