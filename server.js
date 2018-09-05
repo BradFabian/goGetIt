@@ -1,13 +1,15 @@
 // Express
 const express = require("express");
 const app = express();
-const product = require('./routes/apiRoutes');
+const product = require('./routes/product');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 
+// Requiring our models for syncing
 const db = require("./models");
 
+// Sets up the Express app to handle data parsing
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +17,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Handlebars
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
+
 const hbs = exphbs.create({
 	helpers: {
 		formatPrice: function(price) {
@@ -25,7 +28,6 @@ const hbs = exphbs.create({
   	},
   	defaultLayout: 'main'
 });
-
 app.engine('handlebars', hbs.engine);
 app.set("view engine", "handlebars");
 
