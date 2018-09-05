@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes){
         min: 5
       }
     },
-    unit: {
+    unit2: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
