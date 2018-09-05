@@ -27,7 +27,7 @@ exports.login = function(req, res){
 exports.create = function(req, res){
 	res.render("create", { department: departments});
 }
-// Save the new product in database and redirect to create
+// Save the new product in database and redirect to list
 exports.store = function(req, res){
 	db.product.create({
 		name: req.body.name,
@@ -37,20 +37,19 @@ exports.store = function(req, res){
 		gogetit: (req.body.gogetit == 'on') ? true : false
 	})	
 	.then(function(){
-		res.redirect('/list');  // option is to redirect to 'create' so user could enter several products
+		res.redirect('/list'); 
 	});
 }
 
-// Destroy an Item from the database and return an OK
-exports.delete = function(req,res){
-    db.products.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-    .then(function(){
-        res.json('Ok')
-    });
+// Delete a product from database and return ok
+exports.delete = function(req, res){
+	db.product.destroy({
+		where: 
+			{id: req.params.id}
+	}).then(function(){
+		res.json('ok');
+		}
+	);
 }
 
 // Find product by ID and render view to edit it
