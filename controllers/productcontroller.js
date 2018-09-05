@@ -68,3 +68,21 @@ exports.edit = function(req, res){
 			} 
 	});
 }
+
+// Update a product
+exports.update = function(req, res){
+	console.log(req.body.active);
+	db.product.update({
+		name: req.body.name,
+		department: req.body.department,
+		stock: req.body.stock ?parseInt(req.body.stock) : 0,
+		required: req.body.required ? parseInt(req.body.required) : 0,
+		gogetit: (req.body.gogetit == 'on') ? true : false
+	}, {where: {
+		id: req.body.id
+	}})
+	.then(function(){
+		res.redirect('/list');
+	});
+	
+}
