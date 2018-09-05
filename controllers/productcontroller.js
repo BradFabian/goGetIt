@@ -52,23 +52,19 @@ exports.delete = function(req, res){
 	);
 }
 
-// Find product by ID and render view to edit it
-exports.edit = function(req,res){
-    db.products.findById(req.params.id)
-    .then(function(data){
-        if(data){
-            for(var i = 0 in categories) {
-                if(categories[i].value == data.category){
-                    categories[i].selected = true;
-                }
-                else{
-                    categories[i].selected = false;
-                }
-            }
-            res.render("edit", {products: data, category: categories});
-        }
-        else {
-            res.render('404');
-        }
-    });
+// Find a product by id and render the view to edit it
+exports.edit = function(req, res){
+	db.product.findById(req.params.id)
+		.then(function(data){
+			if(data){
+				for (var i = 0 in departments) {
+					if(departments[i].value == data.department){
+				  		departments[i].selected = true;
+					} else {
+						departments[i].selected = false;
+					}
+				}
+				res.render("edit", { product: data, department: departments});
+			} 
+	});
 }
