@@ -32,8 +32,8 @@ exports.store = function(req, res){
 	db.product.create({
 		name: req.body.name,
 		department: req.body.department,
-		price: req.body.stock ?parseInt(req.body.stock) : 0,
-		stock: req.body.required ? parseInt(req.body.required) : 0,
+		stock: req.body.stock ?parseInt(req.body.stock) : 0,
+		required: req.body.required ? parseInt(req.body.required) : 0,
 		gogetit: (req.body.gogetit == 'on') ? true : false
 	})	
 	.then(function(){
