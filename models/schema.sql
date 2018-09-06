@@ -1,5 +1,3 @@
 DROP DATABASE IF EXISTS goGetIt_db;
 CREATE DATABASE goGetIt_db;
 
-
-

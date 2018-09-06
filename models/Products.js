@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
  
  
  
- var Products = sequelize.define("products", {
+ var Products = sequelize.define("Products", {
     product_name: DataTypes.STRING,
     product_quantity: DataTypes.INTEGER,
     quantity_needed: DataTypes.INTEGER,

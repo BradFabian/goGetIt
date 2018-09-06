@@ -14,25 +14,46 @@ module.exports = function(app) {
 
   // Get all examples
   app.get("/api/inventory", function(req, res) {
-    
-    db.products.findAll().then(function(dbgoGetIt) {
-      console.log(dbgoGetIt);
+    db.Products.findAll({}).then(function(dbgoGetIt) {
       res.json(dbgoGetIt);
-     
     });
   });
   //Delete Button API//
 
-  app.delete("/api/inventory/:id", function(req, res) {
-    
-    db.products.destroy({
+
+  app.delete("/api/inventory/:id", passport.authenticate("local"), function(req, res) {
+    db.Products.destroy({
       where: {
         id: req.params.id
       }
     }).then(function(dbgoGetIt) {
       res.json(dbgoGetIt);
-    });
+    })
+  });
+
+
+
+  app.post("/api/inventory", passport.authenticate("local"), function(req, res) {
+    db.post.create(req.body).then(function(dbgoGetIt) {
+      res.json(dbgoGetIt);
+    })
 
   });
- 
+
+  app.put("/api/inventory", function(req, res) {
+    db.dbgoGetIt.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbgoGetIt) {
+        res.json(dbgoGetIt);
+      });
+  });
+
+  app.post("/api/member", passport.authenticate("local"), function(req, res) {
+    res.json("/add");
+  });
 };
+ 
