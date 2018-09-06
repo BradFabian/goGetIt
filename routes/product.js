@@ -3,6 +3,9 @@ const router = express.Router();
 const request = require('request');
 var db = require("../models");
 var passport = require("../config/passport");
+// Require controller modules
+var productController = require('../controllers/productcontroller');
+
 
 
 module.exports = function(app) {
@@ -11,12 +14,12 @@ module.exports = function(app) {
 	  // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
 	  // So we're sending the user back the route to the members page because the redirect will happen on the front end
 	  // They won't get this or even be able to access this page if they aren't authed
-	  res.json("/member");
+	  res.json("/member.html");
 	});
   
   
 	// Get all examples
-	app.get("/controllers/productcontroller", function(req, res) {
+	app.get("/api/productcontroller", function(req, res) {
 	  db.Products.findAll({}).then(function(dbgoGetIt) {
 		res.json(dbgoGetIt);
 	  });
@@ -27,10 +30,6 @@ module.exports = function(app) {
 	  res.json("/add");
 	});
   };
-
-
-// Require controller modules
-var productController = require('../controllers/productcontroller');
 
 
 // Get request to get all products
