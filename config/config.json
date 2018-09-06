@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "goGetIt_db",
+    "database": "storedb",
     "host": "localhost",
     "dialect": "mysql"
   },
