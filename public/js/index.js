@@ -13,7 +13,7 @@ $(document).ready(function() {
   $(document).on("click", ".delete", handleDelete);
 
 function getInventory() {
-$.get("/api/inventory", function(data) {
+$.get("/api/store", function(data) {
 
   if (data.length !== 0) {
    console.log(data.length);
@@ -75,17 +75,5 @@ getInventory();
 // Delete button Button//
 // Delete Button Function//
 //Which item too delete//
-
-function handleDelete() {
-  var currentItem = $(this).parent("td").parent("tr").data("products");
-  var id = currentItem.id;
-  $.ajax({
-    method: "DELETE",
-    url: "/api/inventory/" + id
-  }).then(getInventory);
-}
-
-//call function when page loads//
-//add button
 
 });  
