@@ -77,8 +77,8 @@ getInventory();
 //Which item too delete//
 
 function handleDelete() {
-  var currentItem = $(this).parent("td").parent("tr").data("tr");
-  var id = currentItem;
+  var currentItem = $(this).parent("td").parent("tr").data("products");
+  var id = currentItem.id;
   $.ajax({
     method: "DELETE",
     url: "/api/inventory/" + id
