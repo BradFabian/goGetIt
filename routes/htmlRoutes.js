@@ -12,10 +12,6 @@ module.exports = function(app) {
  app.get("/member", (req, res)=>{
    res.sendFile(path.join(__dirname, "../public/member.html"));
  })
-  
- app.get("/add", (req, res)=>{
-  res.sendFile(path.join(__dirname, "../public/add.html"));
-})
  /* // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
