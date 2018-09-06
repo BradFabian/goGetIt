@@ -7,10 +7,14 @@
     "test": "test"
   },
   "dependencies": {
+    "asynckit": "^0.4.0",
     "bcrypt-nodejs": "0.0.3",
+    "body-parse": "^0.1.0",
     "bytes": "^3.0.0",
+    "cjs": "0.0.11",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "hbs": "^4.0.1",
     "mysql2": "^1.6.1",
@@ -19,5 +23,18 @@
     "request": "^2.88.0",
     "sequelize": "^4.38.0"
   },
-  "homepage": "https://github.com/BradFabian/goGetIt#readme"
+  "homepage": "https://github.com/BradFabian/goGetIt#readme",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BradFabian/goGetIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BradFabian/goGetIt/issues"
+  }
 }
