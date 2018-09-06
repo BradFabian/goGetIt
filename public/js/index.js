@@ -94,6 +94,7 @@ function handleDelete() {
     .parent()
     .parent()
     .data("inventory");
+    
    console.log(currentItem);
   deleteItem(currentItem.id);
 }
