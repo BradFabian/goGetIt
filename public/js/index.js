@@ -71,9 +71,4 @@ $.get("/api/store", function(data) {
 //calling get function//
 getInventory();
 
-
-// Delete button Button//
-// Delete Button Function//
-//Which item too delete//
-
 });  

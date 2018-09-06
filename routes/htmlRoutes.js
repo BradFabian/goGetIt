@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.goGetIt_db.findAll({}).then(function(dbgoGetIt) {
+    db.storedb.findAll({}).then(function(dbstore) {
       res.render("index", {
         
       });
