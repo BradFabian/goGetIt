@@ -23,7 +23,7 @@ $.get("/api/inventory", function(data) {
                           // Create and save a reference to new empty table row
                           var tr = $("<tr>");
                           // Create and save references to 3 td elements 
-                          var idRow = '<td>' + data[i].id + '</td>';
+                          var idRow = '<td id="Id">' + data[i].id + '</td>';
                           var productRow = '<td>' + data[i].product_name + '</td>';
                           var stockRow = '<td>' + data[i].product_quantity + '</td>';
                          // var updateRow = '<td>' + data[i].product_needed + '</td>';
@@ -73,6 +73,7 @@ getInventory();
 
 
 // Delete button Button//
+
 // Delete Button Function//
 //Which item too delete//
 
@@ -83,6 +84,23 @@ function handleDelete() {
     method: "DELETE",
     url: "/api/inventory/" + id
   }).then(getInventory);
+=======
+
+var itemSelect = $("#Id");
+$(document).on("click", "button.delete", handleDelete);
+// Delete Button Function//
+function deleteItem(event) {
+  
+  $.ajax({
+    method: "DELETE",
+    url: "/api/inventory/" + id
+  })
+    .then(function() {
+      getInventory(itemSelect.val());
+    });
+}
+
+
 }
 
 //call function when page loads//

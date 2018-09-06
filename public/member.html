@@ -28,9 +28,10 @@
 <body class="member_bg" id="member_bg">
   
   <!--NavBar Starts-->
-  <nav class="navbar sticky-top navbar-dark bg-dark">
+  <div class="container-fluid">
+  <nav class="navbar sticky-top navbar-dark bg-dark" id="memberBar">
     <a class="navbar-brand" href="#">
-      <img src="./styles/img/Glogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="./styles/img/Glogo.png" class="d-inline-block align-top" alt="">
        <script src="js/greeting.js"></script>
     </a>
     <span class="navbar-text text-white">
@@ -39,14 +40,15 @@
     </span>
 
   </nav>
-  <div>
+  </div>
+  
   <!--Container Here-->
   <div class="container mx-auto">
     <div class="row" id="tablescreen">
-      <div class="col-lg-12" id="tableBox">
-        <div class="card justify-content-center text-center text-white bg-dark border-dark mb-3" style="margin: auto; width: 60rem;">
+      <div class="col" id="tableBox">
+        <div class="card mx-auto text-center text-white bg-dark border-dark mb-3" id="tableId">
           
-          <table class="table">
+          <table class="table table-bordered" id="table">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">#</th>
@@ -105,7 +107,7 @@
   </nav>
  
   <!--Link to jquery-->
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
   
 
 
