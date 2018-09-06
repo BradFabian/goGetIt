@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  
+
+
  //background css//
   $('#member_bg').scroll(function() {
     var scrollPos = $(this).scrollTop();
@@ -9,10 +10,7 @@ $(document).ready(function() {
     $("html").css("background-position", "0% " + backgroundOffset);
   });
 
- 
-
-
-
+  $(document).on("click", ".delete", handleDelete);
 
 function getInventory() {
 $.get("/api/inventory", function(data) {
@@ -72,7 +70,21 @@ $.get("/api/inventory", function(data) {
 }
 //calling get function//
 getInventory();
+
+
 // Delete button Button//
+
+// Delete Button Function//
+//Which item too delete//
+
+function handleDelete() {
+  var currentItem = $(this).parent("td").parent("tr").data("tr");
+  var id = currentItem;
+  $.ajax({
+    method: "DELETE",
+    url: "/api/inventory/" + id
+  }).then(getInventory);
+=======
 
 var itemSelect = $("#Id");
 $(document).on("click", "button.delete", handleDelete);
@@ -88,22 +100,10 @@ function deleteItem(event) {
     });
 }
 
-//Which item too delete//
-function handleDelete() {
-  var currentItem = $(this)
-    .parent()
-    .parent()
-    .data("inventory");
-   console.log(currentItem);
-  deleteItem(currentItem.id);
+
 }
 
 //call function when page loads//
-
-handleDelete();
-
-
-
-
+//add button
 
 });  
