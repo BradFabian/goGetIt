@@ -28,15 +28,12 @@
 	                        	{{/if}}
 	                    	</td>
 	                        <td>
-								<a class="btn btn-success btn-sm btn-edit" href="{{this.id}}/edit">
-								<span class="glyphicon glyphicon-pencil icon_edit" title="Edit Product">Edit</span>
+								<a class="btn btn-success btn-edit" href="{{this.id}}/edit">
+								Edit
 								</a>
-	                        	<a class="btn btn-danger btn-sm btn-delete" data-id="{{this.id}}">
-									<span class="glyphicon glyphicon-remove icon_delete" title="Delete Product">Delete</span>
+	                        	<a class="btn btn-danger  btn-delete" data-id="{{this.id}}">
+									Delete
 								</a>
-								<a href="/api" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-question-sign icon_info" title="API">
-									API
-								</span></a>
 							</td>
 	                    </tr>
 					{{/each}}
